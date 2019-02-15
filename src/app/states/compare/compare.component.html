@@ -1,0 +1,18 @@
+<h1 class="main-title">Car Comparison</h1>
+<div class="cars">
+  <div class="car-content" *ngFor="let car of cars | sort:'brand'">
+    <mat-card class="car">
+      <img mat-card-image src="{{car.picture}}" alt="{{car.brand}}">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item class="title">{{car.brand}} {{car.model}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item class="text">{{car.year}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item class="text">${{car.price | number:'':'en-US'}}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<button mat-flat-button color="primary" class="full-width btn compare" [routerLink]="['/']">Back</button>

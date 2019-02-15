@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   cars: Car[];
   carsFiltered: Car[];
+  carsSelected = [];
 
   constructor(
     private carsService: CarsService,
@@ -37,7 +38,28 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goToDetail(car) {
-    this.router.navigate(['detail', {car: car}]);
+  viewDetail(id) {
+    this.router.navigate(['detail', id]);
+  }
+
+  selectCars(car) {
+    if (this.carsSelected.length < 3 && !car.selected) {
+      car.selected = true;
+      this.carsSelected.push(car.id);
+    } else if (car.selected) {
+      car.selected = false;
+      const index = this.carsSelected.indexOf(car.id);
+      this.carsSelected.splice(index, 1);
+    }
+  }
+
+  compareCars() {
+    const id1 = this.carsSelected[0];
+    const id2 = this.carsSelected[1];
+    const id3 = this.carsSelected[2];
+    if (id1 && id2) {
+      this.router.navigate(['compare'], {queryParams: {id1: id1, id2: id2, id3: id3}});
+    }
+    return false;
   }
 }

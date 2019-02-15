@@ -6,4 +6,5 @@ export interface Car {
   year: number;
   brand: string;
   price: number;
+  selected: boolean;
 }

@@ -10,6 +10,32 @@
   width: 100%;
 }
 
+.btn {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+}
+
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+
+  .car-content {
+    padding: 10px;
+
+    @media(min-width: 40rem) {
+      width: 50%;
+    }
+    @media(min-width: 56rem) {
+      width: 33.3333%;
+    }
+    @media(min-width: 80rem) {
+      width: 25%;
+    }
+  }
+}
+
 .car {
   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
 

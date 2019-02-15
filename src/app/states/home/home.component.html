@@ -4,7 +4,7 @@
 </mat-form-field>
 <div class="cars">
   <div class="car-content" *ngFor="let car of carsFiltered | sort:'brand'">
-    <mat-card class="car" >
+    <mat-card class="car" (click)="viewDetail(car.id)" [ngClass]="{selected: car.selected}">
       <img mat-card-image src="{{car.picture}}" alt="{{car.brand}}">
       <mat-card-content>
         <mat-list>
@@ -14,15 +14,13 @@
           <mat-divider></mat-divider>
           <mat-list-item class="text">${{car.price | number:'':'en-US'}}</mat-list-item>
         </mat-list>
-        <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-list cols="1" rowHeight="60">
           <mat-grid-tile>
-            <button mat-stroked-button class="full-width btn" [routerLink]="[ '/detail', car.id]">Detalle</button>
-          </mat-grid-tile>
-          <mat-grid-tile>
-            <button mat-stroked-button class="full-width btn">Comparar</button>
+            <button mat-stroked-button class="full-width btn basic" (click)="selectCars(car); $event.stopPropagation();">{{ car.selected ? 'Quit' : 'Select'}}</button>
           </mat-grid-tile>
         </mat-grid-list>
       </mat-card-content>
     </mat-card>
   </div>
 </div>
+<button mat-flat-button color="primary" class="full-width btn compare" (click)="compareCars()" [disabled]="carsSelected.length < 2">Compare</button>

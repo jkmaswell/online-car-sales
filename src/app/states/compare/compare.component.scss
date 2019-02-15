@@ -1,0 +1,23 @@
+@import '../../../sass/colors';
+@import '../../../sass/commons';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 10px;
+}
+
+.main-title {
+  padding: 0 10px;
+}
+
+.cars .car-content {
+  @media(min-width: 80rem) {
+    width: 33.3333%;
+  }
+}
+
+.compare {
+  margin-top: 20px;
+}

@@ -16,22 +16,23 @@
   padding: 0 10px;
 }
 
-.cars {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px 0;
+.cars .car-content .car {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
-  .car-content {
-    padding: 10px;
-
-    @media(min-width: 40rem) {
-      width: 50%;
-    }
-    @media(min-width: 56rem) {
-      width: 33.3333%;
-    }
-    @media(min-width: 80rem) {
-      width: 25%;
-    }
+  &:hover {
+    transform: scale3d(1.05,1.05,1);
   }
+
+  &.selected {
+    border: 2px solid rgba(79, 45, 141, 0.84);
+  }
+}
+
+.basic {
+  color: $gray-dark;
+}
+
+.compare {
+  margin-top: 20px;
 }

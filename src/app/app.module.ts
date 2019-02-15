@@ -1,4 +1,3 @@
-import { DetailComponent } from './states/detail/detail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -7,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { routes } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './states/home/home.component';
+import { DetailComponent } from './states/detail/detail.component';
+import { CompareComponent } from './states/compare/compare.component';
 import { CarsService } from './services/cars.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SortPipe } from './pipes/sort.pipe';
@@ -24,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     HomeComponent,
     DetailComponent,
+    CompareComponent,
     SortPipe
   ],
   imports: [
