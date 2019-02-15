@@ -1,3 +1,4 @@
+import { DetailComponent } from './states/detail/detail.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -22,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     HomeComponent,
+    DetailComponent,
     SortPipe
   ],
   imports: [

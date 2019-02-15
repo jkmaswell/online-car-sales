@@ -1,0 +1,18 @@
+<h1 class="main-title">Car Detail</h1>
+<mat-card class="car" *ngIf="car">
+  <img class="image" mat-card-image src="{{car.picture}}" alt="{{car.brand}}">
+  <mat-card-content class="info">
+    <mat-list>
+      <mat-list-item class="title">{{car.brand}} {{car.model}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="text">{{car.year}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="text">${{car.price | number:'':'en-US'}}</mat-list-item>
+    </mat-list>
+    <mat-grid-list cols="1" rowHeight="60">
+      <mat-grid-tile>
+        <button mat-stroked-button class="full-width btn" [routerLink]="[ '/']">Volver</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

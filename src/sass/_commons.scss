@@ -3,9 +3,31 @@
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
 .full-width {
   width: 100%;
+}
+
+.car {
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+
+  .title {
+    color: $gray-dark;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .text {
+    color: $gray;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .btn {
+    margin: 0 2px;
+  }
 }

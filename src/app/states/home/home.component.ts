@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from './../../services/cars.service';
 import { Car } from './../../models/car.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
   carsFiltered: Car[];
 
   constructor(
-    private carsService: CarsService
+    private carsService: CarsService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -33,5 +35,9 @@ export class HomeComponent implements OnInit {
     } else {
       this.carsFiltered = this.cars;
     }
+  }
+
+  goToDetail(car) {
+    this.router.navigate(['detail', {car: car}]);
   }
 }

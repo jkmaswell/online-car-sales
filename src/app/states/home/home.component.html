@@ -16,7 +16,7 @@
         </mat-list>
         <mat-grid-list cols="2" rowHeight="2:1">
           <mat-grid-tile>
-            <button mat-stroked-button class="full-width btn">Detalle</button>
+            <button mat-stroked-button class="full-width btn" [routerLink]="[ '/detail', car.id]">Detalle</button>
           </mat-grid-tile>
           <mat-grid-tile>
             <button mat-stroked-button class="full-width btn">Comparar</button>
