@@ -1,0 +1,28 @@
+<h1 class="main-title">Car Sales</h1>
+<mat-form-field class="search">
+    <input matInput #searchInput placeholder="Buscar" (keyup)="search(searchInput.value)">
+</mat-form-field>
+<div class="cars">
+  <div class="car-content" *ngFor="let car of carsFiltered | sort:'brand'">
+    <mat-card class="car" >
+      <img mat-card-image src="{{car.picture}}" alt="{{car.brand}}">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item class="title">{{car.brand}} {{car.model}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item class="text">{{car.year}}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item class="text">${{car.price | number:'':'en-US'}}</mat-list-item>
+        </mat-list>
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>
+            <button mat-stroked-button class="full-width btn">Detalle</button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-stroked-button class="full-width btn">Comparar</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
